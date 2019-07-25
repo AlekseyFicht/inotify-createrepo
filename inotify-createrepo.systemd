@@ -1,1 +1,10 @@
+[Unit]
+Description=inotify-createrepo
+After=network.target
 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/inotify-createrepo -c /etc/inotify-createrepo.conf
+
+[Install]
+WantedBy=multi-user.target
