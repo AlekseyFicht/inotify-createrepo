@@ -10,7 +10,6 @@ Source0: inotify-createrepo.sh
 Source1: inotify-createrepo-nginx.conf
 Source2: inotify-createrepo.conf
 Source3: inotify-createrepo.service
-Requires: nginx
 Requires: createrepo
 Requires: inotify-tools
 
