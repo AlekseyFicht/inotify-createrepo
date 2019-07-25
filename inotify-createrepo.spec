@@ -7,8 +7,9 @@ Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
 Source0: inotify-createrepo.sh
-Source1: inotify-createrepo.conf
-Source2: inotify-createrepo.systemd
+Source1: inotify-createrepo-nginx.conf
+Source2: inotify-createrepo-nginx.conf
+Source3: inotify-createrepo.systemd
 Requires: nginx
 Requires: createrepo
 Requires: inotify-tools
