@@ -4,6 +4,9 @@ source /etc/inotify-createrepo.conf
 
 while true;
 do
-  inotifywait -mr -e create,modify,close_write,delete --exclude ".repodata|.olddata|repodata" "${REPO}" | createrepo "${REPO}"
+  for DIR in ${REPO[*]}
+  do
+  inotifywait -mr -e create,modify,close_write,delete --exclude ".repodata|.olddata|repodata" "${DIR}" | createrepo "${DIR}"
   sleep 10
+  done
 done
