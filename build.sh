@@ -10,5 +10,6 @@ do
     fi
 done
 
-spectool -g -R inotify-createrepo.spec
+cp inotify-createrepo.* SOURCES
+
 rpmbuild -bb --define "_topdir $PWD" inotify-createrepo.spec
