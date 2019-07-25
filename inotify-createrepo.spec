@@ -28,6 +28,6 @@ mkdir -p %{buildroot}/var/www/repos/rpm-repo/
 
 %files
 %{_bindir}/%{name}
-/etc/nginx/conf.d/inotify-createrepo.conf
+/etc/nginx/conf.d/inotify-createrepo-nginx.conf
 /etc/inotify-createrepo.conf
 %dir /var/www/repos/rpm-repo/
