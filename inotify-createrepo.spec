@@ -2,7 +2,7 @@
 
 Name:    inotify-createrepo
 Version: 0.6
-Release: 2
+Release: 3
 Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
@@ -55,4 +55,3 @@ mkdir -p %{buildroot}/var/www/repos/rpm-repo/
 %if %{use_systemd}
 %{_unitdir}/%{name}.service
 %endif
-

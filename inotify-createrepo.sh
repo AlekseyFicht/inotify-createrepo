@@ -15,7 +15,6 @@ function run_createrepo() {
   while true; do
     if [ -f /tmp/need_create ];
     then
-      echo "run_createrepo"
       /usr/bin/createrepo "${REPO}"
       rm -f /tmp/need_create
       sleep 5
