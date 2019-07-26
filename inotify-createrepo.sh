@@ -9,7 +9,6 @@ function monitoring() {
     do
       echo $events >> $LOGFILE
       need_create="1"
-      /usr/bin/createrepo "${REPO}"
     done
 }
 
