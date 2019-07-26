@@ -3,6 +3,7 @@ Description=inotify-createrepo
 After=network.target
 
 [Service]
+Type=forking
 PIDFile = /run/inotify-createrepo.pid
 User = root
 Group = root
