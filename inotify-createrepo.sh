@@ -1,5 +1,8 @@
 #!/bin/bash
 
+exec >>/tmp/script.log 2>&1
+set -xu
+
 source /etc/inotify-createrepo.conf
 
 while true;
