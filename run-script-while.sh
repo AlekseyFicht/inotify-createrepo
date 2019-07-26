@@ -6,5 +6,6 @@ set -xu
 while true;
 do
   /usr/local/bin/inotify-createrepo
+  echo $?
   sleep 2
 done
