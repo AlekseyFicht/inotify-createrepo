@@ -13,14 +13,17 @@ function monitoring() {
     done
 }
 
-while true; do
-  if [ "$need_create" == "1" ];
-  then
-    /usr/bin/createrepo "${REPO}"
-    sleep 5
-  fi
-done
+function run_createrepo() {
+  while true; do
+    if [ "$need_create" == "1" ];
+    then
+      /usr/bin/createrepo "${REPO}"
+      sleep 5
+    fi
+  done
+}
 
 
 echo "Start filesystem monitoring: Directory is $REPO, monitor logfile is $LOGFILE"
-monitoring $DIR  >> $LOGFILE &
+monitoring >> $LOGFILE &
+run_createrepo >> $LOGFILE &
