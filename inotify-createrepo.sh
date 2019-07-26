@@ -8,7 +8,7 @@ function monitoring() {
     inotifywait -e create,delete -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
     do
       echo $events >> $LOGFILE
-      need_create="1"
+      need_create=$(("1"))
     done
 }
 
