@@ -2,20 +2,18 @@
 
 source /etc/inotify-createrepo.conf
 LOGFILE=/var/log/inotify-createrepo.log
-need_create="0"
 
 function monitoring() {
     inotifywait -e create,delete -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
     do
       echo $events >> $LOGFILE
-      need_create=$(("1"))
+      touch /tmp/need_create
     done
 }
 
 function run_createrepo() {
   while true; do
-    echo "$need_create"
-    if [ "$need_create" == "1" ];
+    if [ -f /tmp/need_create ];
     then
       echo "run_createrepo"
       /usr/bin/createrepo "${REPO}"
