@@ -6,7 +6,7 @@ LOGFILE=/var/log/inotify-createrepo.log
 function monitoring() {
     inotifywait -e create,delete,modify,move -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
     do
-      echo $events >> $LOGFILE        
+      echo $events >> $LOGFILE
       /usr/bin/createrepo "${REPO}"
       sleep 10
     done
