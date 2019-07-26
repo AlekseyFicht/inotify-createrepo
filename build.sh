@@ -10,7 +10,7 @@ do
     fi
 done
 
-rm -f {RPMS,SRPMS,BUILD,SOURCES,SPECS}
+rm -rf {RPMS,SRPMS,BUILD,SOURCES,SPECS}
 mkdir {RPMS,SRPMS,BUILD,SOURCES,SPECS}
 
 cp inotify-createrepo.* SOURCES
