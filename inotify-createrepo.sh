@@ -17,6 +17,7 @@ function run_createrepo() {
     then
       echo "run_createrepo"
       /usr/bin/createrepo "${REPO}"
+      rm -f /tmp/need_create
       sleep 5
     fi
   done
