@@ -6,7 +6,7 @@ After=network.target
 PIDFile = /run/inotify-createrepo.pid
 User = root
 Group = root
-ExecStart = /bin/bash /usr/local/bin/inotify-createrepo.sh
+ExecStart = /bin/bash /usr/local/bin/inotify-createrepo
 ExecReload = /bin/kill -s HUP $MAINPID
 ExecStop = /bin/kill -s TERM $MAINPID
 
