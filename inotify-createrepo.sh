@@ -3,6 +3,10 @@
 source /etc/inotify-createrepo.conf
 
 while true; do
-  /usr/bin/inotifywait -mr -e create,modify,close_write,delete --exclude ".repodata|.olddata|repodata" "${REPO}" | /usr/bin/createrepo "${REPO}"
+  inotifywait -r -e modify,close_write,move,create,delete --exclude ".repodata|.olddata|repodata" "${REPO}"
+  echo "next line after inotifywait"
+
   sleep 2
 done
+
+# /usr/bin/createrepo "${REPO}"
