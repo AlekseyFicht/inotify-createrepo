@@ -12,5 +12,6 @@ done
 
 cp inotify-createrepo.* SOURCES
 cp inotify-createrepo-nginx.conf SOURCES
+cp run-script-while.sh SOURCES
 
 rpmbuild -bb --define "_topdir $PWD" inotify-createrepo.spec
