@@ -10,7 +10,9 @@ do
     fi
 done
 
+rm -f {RPMS,SRPMS,BUILD,SOURCES,SPECS}
+mkdir {RPMS,SRPMS,BUILD,SOURCES,SPECS}
+
 cp inotify-createrepo.* SOURCES
-cp run-script-while.sh SOURCES
 
 rpmbuild -bb --define "_topdir $PWD" inotify-createrepo.spec
