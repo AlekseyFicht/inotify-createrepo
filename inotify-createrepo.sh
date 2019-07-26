@@ -14,8 +14,10 @@ function monitoring() {
 
 function run_createrepo() {
   while true; do
+    echo "$need_create"
     if [ "$need_create" == "1" ];
     then
+      echo "run_createrepo"
       /usr/bin/createrepo "${REPO}"
       sleep 5
     fi
