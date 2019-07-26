@@ -7,6 +7,7 @@ function monitoring() {
     inotifywait -e create,delete,modify,move -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
     do
        /usr/bin/createrepo "${REPO}"
+       sleep 10
     done
 }
 
