@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/inotify-createrepo -c /etc/inotify-createrepo.conf
+ExecStart=/usr/local/bin/inotify-createrepo
 
 [Install]
 WantedBy=multi-user.target
