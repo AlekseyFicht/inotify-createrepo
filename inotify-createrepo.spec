@@ -1,15 +1,14 @@
 %global _prefix /usr/local
 
 Name:    inotify-createrepo
-Version: 0.5
-Release: 10
+Version: 0.6
+Release: 1
 Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
 Source0: inotify-createrepo.sh
 Source2: inotify-createrepo.conf
 Source3: inotify-createrepo.service
-Source1: run-script-while.sh
 Requires: createrepo
 Requires: inotify-tools
 
@@ -22,8 +21,8 @@ Createrepo backend daemon based on inotifywait
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}/%{_bindir}
+mkdir -p %{buildroot}/etc
 %{__install} -m 755 %{SOURCE0} %{buildroot}/%{_bindir}/%{name}
-%{__install} -m 755 %{SOURCE1} %{buildroot}/%{_bindir}/run-script-while.sh
 cp -a %{SOURCE2} %{buildroot}/etc/
 mkdir -p %{buildroot}/var/www/repos/rpm-repo/
 
@@ -51,7 +50,6 @@ mkdir -p %{buildroot}/var/www/repos/rpm-repo/
 
 %files
 %{_bindir}/%{name}
-%{_bindir}/run-script-while.sh
 /etc/inotify-createrepo.conf
 %dir /var/www/repos/rpm-repo/
 %if %{use_systemd}
