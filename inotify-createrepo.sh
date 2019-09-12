@@ -17,8 +17,8 @@ function run_createrepo() {
     then
       rm -f /tmp/need_create
       /usr/bin/createrepo "${REPO}"
-      sleep 5
     fi
+    sleep 5
   done
 }
 
