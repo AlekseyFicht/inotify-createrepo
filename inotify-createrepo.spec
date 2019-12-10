@@ -2,7 +2,7 @@
 
 Name:    inotify-createrepo
 Version: 0.6
-Release: 9
+Release: 10
 Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
