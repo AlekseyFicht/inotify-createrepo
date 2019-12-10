@@ -16,9 +16,9 @@ function run_createrepo() {
     if [ -f /tmp/need_create ];
     then
       rm -f /tmp/need_create
-      /usr/bin/createrepo "${REPO}"
+      /usr/bin/createrepo --update "${REPO}"
     fi
-    sleep 5
+    sleep 3
   done
 }
 
