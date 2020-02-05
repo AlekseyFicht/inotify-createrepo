@@ -16,7 +16,9 @@ function run_createrepo() {
     if [ -f /tmp/need_create ];
     then
       rm -f /tmp/need_create
+      echo "start createrepo $(date --rfc-3339=seconds)"
       /usr/bin/createrepo --update "${REPO}"
+      echo "finish createrepo $(date --rfc-3339=seconds)"
     fi
     sleep 3
   done

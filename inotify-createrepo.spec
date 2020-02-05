@@ -1,8 +1,8 @@
 %global _prefix /usr/local
 
 Name:    inotify-createrepo
-Version: 0.6
-Release: 10
+Version: 0.7
+Release: 1
 Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
