@@ -20,7 +20,7 @@ function run_createrepo() {
       /usr/bin/createrepo --update "${REPO}"
       echo "finish createrepo $(date --rfc-3339=seconds)"
     fi
-    sleep 3
+    sleep 1
   done
 }
 
