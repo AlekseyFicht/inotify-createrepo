@@ -1,0 +1,5 @@
+# Remove '*SNAPSHOT*.rpm' older than 1 day in yum repo
+0 0 * * * root find /var/www/repos/rpm-repo/ -name '*SNAPSHOT*.rpm' -mtime +1 -exec rm -vfr {} \; 2>&1 > /var/log/clean_inotify_createrepo.log
+
+# Remove '*.rpm' older than 30 day in yum repo
+1 0 * * * root find /var/www/repos/rpm-repo/ -name '*.rpm' -mtime +30 -exec rm -vfr {} \; 2>&1 > /var/log/clean_inotify_createrepo.log

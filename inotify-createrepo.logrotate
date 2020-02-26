@@ -1,0 +1,12 @@
+/var/log/clean_inotify_createrepo.log
+/var/log/inotify-createrepo.log
+{
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    rotate 7
+    postrotate
+        /bin/systemctl restart inotify-createrepo > /dev/null 2>/dev/null || true
+    endscript
+}
