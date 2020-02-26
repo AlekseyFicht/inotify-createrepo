@@ -1,4 +1,3 @@
-/var/log/clean_inotify_createrepo.log
 /var/log/inotify-createrepo.log
 {
     missingok
