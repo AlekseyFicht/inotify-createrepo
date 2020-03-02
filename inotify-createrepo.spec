@@ -2,7 +2,7 @@
 
 Name:    inotify-createrepo
 Version: 0.8
-Release: 3
+Release: 4
 Summary: Createrepo backend daemon based on inotifywait
 Group:   Development Tools
 License: ASL 2.0
@@ -31,6 +31,7 @@ cp -a %{SOURCE1} %{buildroot}/etc/
 cp -a %{SOURCE2} %{buildroot}/etc/cron.d/
 cp -a %{SOURCE3} %{buildroot}/etc/logrotate.d/
 mkdir -p %{buildroot}/var/www/repos/rpm-repo/
+mkdir -p %{buildroot}/var/www/inotify-createrepo/
 
 
 %if %{use_systemd}
@@ -60,6 +61,7 @@ mkdir -p %{buildroot}/var/www/repos/rpm-repo/
 /etc/cron.d/inotify-createrepo.cron
 /etc/logrotate.d/inotify-createrepo.logrotate
 %dir /var/www/repos/rpm-repo/
+%dir /var/www/inotify-createrepo/
 %if %{use_systemd}
 %{_unitdir}/%{name}.service
 %endif

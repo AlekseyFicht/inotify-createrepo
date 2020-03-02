@@ -3,3 +3,9 @@
 
 # Remove '*.rpm' older than 30 day in yum repo
 1 0 * * * root find /var/www/repos/rpm-repo/ -name '*.rpm' -mtime +30 -exec rm -vfr {} \; 2>&1 > /var/log/clean_rpm_inotify_createrepo.log
+
+# Generate latest-snapshot-rpm in the last 11 minutes in yum repo
+* * * * * root find /var/www/repos/rpm-repo/ -name '*SNAPSHOT*.rpm' -mmin -11  \; 2>&1 > /var/www/inotify-createrepo/latest-snapshot-rpm
+
+# Generate latest-stable-rpm in the last 11 minutes in yum repo
+* * * * * root find /var/www/repos/rpm-repo/ -name '*.rpm' -mmin -11  \; 2>&1 > /var/www/inotify-createrepo/latest-stable-rpm
