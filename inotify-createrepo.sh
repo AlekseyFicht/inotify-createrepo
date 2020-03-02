@@ -4,7 +4,7 @@ source /etc/inotify-createrepo.conf
 LOGFILE=/var/log/inotify-createrepo.log
 
 function monitoring() {
-    inotifywait -e create,delete -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
+    inotifywait -e close_write,delete -msrq --exclude ".repodata|.olddata|repodata" "${REPO}" | while read events 
     do
       echo $events >> $LOGFILE
       touch /tmp/need_create
